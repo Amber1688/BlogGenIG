@@ -1,0 +1,30 @@
+{
+    "name": "BlogGenIG",
+    "description": "Generate blog posts from IG hashtag",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "IG_background.js"
+    },
+    "action": {
+      "default_title": "BlogGenIG"
+    },
+    "permissions": [
+        "tabs",
+        "debugger",
+        "scripting",
+        "storage",
+        "unlimitedStorage",
+        "downloads"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["https://www.instagram.com/*"],
+          "js": ["IG_content-script.js"]
+        }
+    ]
+  }
